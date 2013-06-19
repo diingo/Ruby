@@ -2,8 +2,9 @@
 class Chimpanzee
  @@Chimpanzees = []
 
+ 
  def self.all_chimps
- 	
+ 	@@Chimpanzees
  end
  
  def yell
@@ -11,11 +12,15 @@ class Chimpanzee
  	
  end
 
- attr_accessor :bananas_eaten :is_clean
+# Instance Level
+
+ attr_accessor :bananas_eaten, :is_clean
 
  def initialize
  	@bananas_eaten = 0
  	@is_clean = true
+
+ 	@@Chimpanzees << self
  end
 
 
@@ -30,12 +35,12 @@ class Chimpanzee
  	# end
  end
 
- def groom #need more added
- 	if @is_clean = false
+ def groom 
+ 	if @is_clean == false
  		puts "This monkey is getting a shower."
-
+ 		@is_clean = true
  	else
- 		Puts "Nothing to do. This monkey is clean."
+ 		puts "Nothing to do. This monkey is clean."
  	end
  end
 
