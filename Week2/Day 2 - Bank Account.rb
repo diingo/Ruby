@@ -101,13 +101,8 @@ def initialize(account_one, account_two, amount)
 	BankAccount.pending_transactions(account_one, account_two, amount)
 end
 
+
+
 end
 
 #HOW DO I DO THIS - ASK SHEHZAN
-class CreateBankAccounts
-	
-	@bank_account_users = []
-	5.times do 
-		@bank_account_users << BankAccount.new
-	end 
-end
