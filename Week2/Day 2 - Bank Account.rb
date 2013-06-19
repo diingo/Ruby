@@ -3,6 +3,7 @@ class BankAccount
 	@@total_money_in_accounts=0
 	@@total_loans_out=0
 	@@pending_transactions = []
+	@@total_accounts = 0
 
 	attr_accessor :amount_available,
 		:loan_amount
@@ -11,6 +12,7 @@ class BankAccount
 		@amount_available=500
 		@@total_money_in_accounts+=500
 		@loan_amount=0
+		@@total_accounts += 1
 	end
 
 	def deposit_money(amount)
@@ -77,6 +79,10 @@ class BankAccount
 		@@pending_transactions
 	end
 
+	def self.total_accounts
+		@@total_accounts
+	end
+
 end
 
 def create_bank_accounts()
@@ -95,4 +101,13 @@ def initialize(account_one, account_two, amount)
 	BankAccount.pending_transactions(account_one, account_two, amount)
 end
 
+end
+
+#HOW DO I DO THIS - ASK SHEHZAN
+class CreateBankAccounts
+	
+	@bank_account_users = []
+	5.times do 
+		@bank_account_users << BankAccount.new
+	end 
 end
