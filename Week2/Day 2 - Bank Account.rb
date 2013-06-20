@@ -85,10 +85,12 @@ class BankAccount
 
 end
 
-def create_bank_accounts()
-	@account_1 = BankAccount.new
-	@account_2 = BankAccount.new
-	@account_3 = BankAccount.new
+#is this right?
+def self.create_users(i)
+	@users =[]
+	i.times do |num|
+		@users << BankAccount.new
+	end
 end
 
 class Transaction
